@@ -12,8 +12,7 @@ export default function Home() {
 
   return (
     <div
-    // onMouseMove={!isLoading && status ? handleMouseMove : null}
-    onClick={handleClick}
+      onClick={handleClick}
     >
       <main className={styles.main}>
         <h3 className={styles.text}>
